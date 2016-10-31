@@ -15,54 +15,44 @@ namespace Vsite.CSharp
 
     class Izvedena // : Bazna
     {
-        public Izvedena()
-        {
-            Console.WriteLine(string.Format("Izvedena.Izvedena()"));
-        }
 
         public readonly int B;
     }
 
     public class DelegiranjeKonstruktora
     {
-        public static void StvoriInstancuBazneKlase()
-        {
-            // TODO: Stvoriti instancu klase Bazna i ispisati vrijednost člana A.
-
-        }
-
-        public static void StvoriInstancuIzvedeneKlasePraznimKonstruktorom()
-        {
-            // TODO: Promijeniti klasu Izvedena tako da je izvedena iz klase Bazna. Provjeriti da li se kod prevodi te napraviti potrebne promjene u klasi Izvedena.
-            // TODO: Stvoriti instancu klase Izvedena pozivom podrazumijevanog konstruktora.
-
-            // TODO: Ispisati vrijednosti članova A i B stvorenog objekta.
-
-        }
 
         public static void StvoriInstancuIzvedeneKlaseKonstruktoromSDvaArgumenta(int a, int b)
         {
-            // TODO: U klasu Izvedena dodati konstruktor s dva argumenta ("a" i "b") tipa int, kojima će se inicijalizirati članovi A i B. 
-            // U tijelo konstruktora dodati naredbu za ispis: Console.WriteLine(string.Format("Izvedena.Izvedena({0}, {1})", a, b));
+            // TODO: U klasu Izvedena dodati konstruktor s dva argumenta ("a" i "b") tipa int, kojima će se inicijalizirati članovi A i B. Konstruktor treba pozivati konstruktor bazne klase s jednim argumentom i proslijediti mu argument a.
+            // TODO: U tijelo konstruktora dodati naredbu za ispis: Console.WriteLine(string.Format("Izvedena.Izvedena({0}, {1})", a, b));
 
-            // TODO: Stvoriti objekt pozivom tog konstruktora i ispisati vrijednosti članova A i B stvorenog objekta.
+            // TODO: Stvoriti objekt pozivom tog konstruktora:
+            //Izvedena i = new Izvedena(a, b);
 
+            // TODO: Dodati dvije naredbe koje će ispisati vrijednosti članova A i B stvorenog objekta i, pokrenuti kod i provjeriti ispis.
+        }
 
-            // TODO: Promijeniti prazni konstruktor klase Izvedena tako da delegira poziv konstruktora s dva argumenta.
+        public static void StvoriInstancuIzvedeneKlaseKonstruktoromSJednimArgumentom(int a)
+        {
+            // TODO: U klasu Izvedena dodati konstruktor s jednim argumentom "a" tipa int. Taj konstruktor treba pozvati ("delegirati") prethodno definirani konstruktor klase Izvedena s dva argumenta s time da je prvi argument "a", a drugi argument je 0. 
 
+            // TODO: U tijelo konstruktora dodati naredbu za ispis: Console.WriteLine(string.Format("Izvedena.Izvedena({0})", a));
+
+            // TODO: Stvoriti objekt pozivom tog konstruktora:
+            // Izvedena i = new Izvedena(a);
+
+            // TODO: Dodati dvije naredbe koje će ispisati vrijednosti članova A i B stvorenog objekta i, pokrenuti kod i provjeriti ispis.
         }
 
         static void Main(string[] args)
         {
-            StvoriInstancuBazneKlase();
-
-            StvoriInstancuIzvedeneKlasePraznimKonstruktorom();
-
             StvoriInstancuIzvedeneKlaseKonstruktoromSDvaArgumenta(5, 7);
+            Console.WriteLine();
+            StvoriInstancuIzvedeneKlaseKonstruktoromSJednimArgumentom(5);
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey();
         }
     }
-
 }
